@@ -1,7 +1,7 @@
 name: FraudDetection
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
     inputs:
       recordId:
         description: 'ID of the transaction'
