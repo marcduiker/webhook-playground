@@ -28,7 +28,7 @@ jobs:
           --url '${{ secrets.FRAUDDETECTION_WEBHOOK }}' \
           --data '{ \
           "recordId": '${{ github.event.inputs.recordId }}', \
-          "isSuspiciousTransaction": '$(($RANDOM%2 -eq 0))' \
+          "isSuspiciousTransaction": '$(($RANDOM%2==0))' \
           }'`
           if [ $CODE!="202" ] 
           then
