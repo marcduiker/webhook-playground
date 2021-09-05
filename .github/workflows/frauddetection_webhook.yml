@@ -20,6 +20,12 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Call webhook
         run: |
+          if [ $RANDOM%2==0 ] 
+          then
+            SUSPICIOUS='true' 
+          else
+            SUSPICIOUS='false'
+          fi
           CODE=`curl --write-out '%{http_code}' \
           --silent \
           --output /dev/null \
@@ -28,7 +34,7 @@ jobs:
           --url '${{ secrets.FRAUDDETECTION_WEBHOOK }}' \
           --data '{ \
           "recordId": '${{ github.event.inputs.recordId }}', \
-          "isSuspiciousTransaction": '$(($RANDOM%2==0))' \
+          "isSuspiciousTransaction": $SUSPICIOUS \
           }'`
           if [ $CODE!="202" ] 
           then
