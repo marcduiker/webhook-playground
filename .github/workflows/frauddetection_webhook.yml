@@ -2,12 +2,11 @@ name: FraudDetection
 
 on:
   workflow_dispatch
-
-inputs:
-  recordId:
-    description: 'ID of the transaction'
-    required: true
-    default: '12345'
+    inputs:
+      recordId:
+        description: 'ID of the transaction'
+        required: true
+        default: '12345'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
