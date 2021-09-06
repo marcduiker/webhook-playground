@@ -38,7 +38,7 @@ jobs:
           }'`
           if [ $CODE!="202" ] 
           then
-            echo "FAILURE"
+            echo 1
           else
-            echo "SUCCESS"
+            echo 0
           fi
