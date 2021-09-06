@@ -33,7 +33,7 @@ jobs:
           --header 'content-type: application/json' \
           --url '${{ secrets.FRAUDDETECTION_WEBHOOK }}' \
           --data '{ \
-          "recordId": '${{ github.event.inputs.recordId }}', \
+          "recordId": "${{ github.event.inputs.recordId }}", \
           "isSuspiciousTransaction": '$SUSPICIOUS' \
           }'`
           if [ $CODE!="202" ] 
